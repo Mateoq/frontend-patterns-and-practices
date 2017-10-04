@@ -1,0 +1,12 @@
+{
+  "name": "frontend-patterns-and-practices",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Mateoq/frontend-patterns-and-practices.git",
+  "author": "Mateo Quintero <mquintero@hugeinc.com>",
+  "contributors": [
+    "Camilo Orrego <aorrego@hugeinc.com>",
+    "Mateo Quintero <mquintero@hugeinc.com>"
+  ],
+  "license": "MIT"
+}
