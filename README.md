@@ -1,2 +1,6 @@
-# vanilla_component_pattern
-Component pattern system using vanilla javascript objects.
+# Frontend Patterns and Practices
+
+### TODO
+- Javascript object component pattern.
+- Css browser trageting.
+- Sass viewport support.
