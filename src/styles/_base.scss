@@ -1,0 +1,20 @@
+/*
+
+_reset.scss
+
+TODO: Add purpose of file.
+
+*/
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+// Very important if you're starting a project from start.
+// Otherwise, add this property when necessary.
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
