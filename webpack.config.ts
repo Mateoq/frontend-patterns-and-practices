@@ -15,6 +15,10 @@ const config: webpack.Configuration = {
 
   devtool: 'inline-source-map',
 
+  devServer: {
+    port: 3000,
+  },
+
   module: {
     loaders: [
       {
