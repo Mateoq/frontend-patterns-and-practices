@@ -15,3 +15,13 @@ In this case, you can add another folder with all the files you need, but those 
 module/component.
 
 */
+
+.container {
+  max-width: 1024px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include from(md) {
+    padding: 0 30px;
+  }
+}
