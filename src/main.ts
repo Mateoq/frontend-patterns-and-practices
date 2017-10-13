@@ -6,4 +6,5 @@
  */
 
 import './styles/main.scss';
+import './polyfill';
 import './setup';
