@@ -1,0 +1,103 @@
+/*
+
+_typography.scss
+
+Add here the font-face styles.
+
+To see more check:
+
+https://developer.mozilla.org/es/docs/Web/CSS/@font-face
+
+For this project we're gonna use an external service, but still here are some useful tricks.
+Since the examples don't have a specific file and, also, Webpack requires
+more configuration (surprise motherfucker!!!) then the src rule will be commented.
+
+Let's see the tricks now.
+
+*/
+
+// Make use of font-weight and font-style!!!
+// This can look as a simple tip, but it's something that helps you a lot in the project.
+// Let's check the bad example first:
+
+@font-face {
+  font-family: 'MyFont-regular';
+  // src: url('../fonts/my-font/my-font-regular.ttf');
+}
+
+@font-face {
+  font-family: 'MyFont-bold';
+  // src: url('../fonts/my-font/my-font-bold.ttf');
+}
+
+@font-face {
+  font-family: 'MyFont-bold-italic';
+  // src: url('../fonts/my-font/my-font-bold-italic.ttf');
+}
+
+// You may see this as a normal use of @font-face, but let's check how we use it:
+
+// Nothing bad here.
+.typography-bad-example {
+  font-family: 'MyFont-regular', Helvetica, Arial, sans-serif;
+}
+
+// You see the problem here? let's do something else
+.typography-bad-example--bold {
+  font-family: 'MyFont-bold', Helvetica, Arial, sans-serif;
+}
+
+.bad-richtext {
+  b,
+  strong {
+    // Ok... this is no good...
+    font-family: 'MyFont-bold', Helvetica, Arial, sans-serif;
+  }
+}
+
+// The problem is that we need to define the font-family again and again.
+// Let's see another approach:
+
+@font-face {
+  font-family: 'MyFont';
+  // src: url('../fonts/my-font/my-font-regular.ttf');
+}
+
+@font-face {
+  font-family: 'MyFont';
+  font-weight: bold;
+  // src: url('../fonts/my-font/my-font-bold.ttf');
+}
+
+@font-face {
+  font-family: 'MyFont';
+  font-weight: bold;
+  font-style: italic;
+  // src: url('../fonts/my-font/my-font-bold-italic.ttf');
+}
+
+// The difference here is that we're using the same font-family. You may be scared because you think you're
+// overwritting each definition, but the use of font-weight and font-style make them "unique". Let's see how they work.
+
+.typographoy-good-example {
+  // Nothing here...
+  // ...
+  // Why? because the font-family is set in the root element (html)
+  // ...
+  // Ok, this is not fair, so let's see another example
+}
+
+.typography-good-example--bold {
+  font-weight: bold;
+
+  // Here we go! so what happens here is that it tries to use the inherited font-family,
+  // but when it finds the font-weight property, it will try to check which @font-face definition
+  // matches, load the font if not loaded yet and apply it to the elements.
+}
+
+.good-richtext {
+  // Nothing here
+  // ...
+  // Same as above. We don't need to do anything for the b and strong elements because they are using
+  // font-weight: bold by default.
+}
