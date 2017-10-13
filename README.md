@@ -13,6 +13,7 @@ For these reasons, I want to be clear with something: Please be respectful with 
 
 ## Presentation
 
+- Folder structure overview.
 - Sass - Base structure.
 - Sass - Module/Component structure.
 
