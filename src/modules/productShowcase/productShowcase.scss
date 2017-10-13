@@ -1,0 +1,55 @@
+/**
+
+productShowcase.scss (A.K.A. The Module)
+
+The important part here is to follow BEM as much as possible. Each project has different people
+and that people should decide what parts are acceptable and what are not. Also, how to structure
+the css in this part is a decision more than a "MUST TO FOLLOW" rule.
+
+*/
+
+// First approach: Using 'this' (&)
+// Some people like this approach because it's cleaner and you don't need to repeat the base name.
+// Personally, I don't dislike this one, it's just that I don't like the excessive embed that it can
+// produce.
+.product-showcase {
+  &__title {
+
+  }
+
+  &__text {
+
+  }
+
+  &__button {
+
+  }
+}
+
+// Second approach: Old fashion CSS selectors
+// What I like of this approach is that I can do a global find and go to the selector very quickly (this can be
+// done with the approach above too), and reduces the embedding to the maximum. That's it. Use whatever you decide
+// to use.
+
+// Here we're gonna add the real code for this module
+.product-showcase {
+  background: color('guardsman-red');
+  color: color('alabaster');
+  padding: 25px 0;
+}
+
+.product-showcase__title {
+  margin-top: 0;
+  font-size: 26px; // Why px and not other crazy size unit like rem or em?
+}
+
+.product-showcase__text {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.product-showcase__button {
+  background-color: #37474F;
+  color: color(alabaster);
+}
