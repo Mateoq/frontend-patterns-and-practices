@@ -1,8 +1,11 @@
 /*
 
-_reset.scss
+_base.scss
 
-TODO: Add purpose of file.
+Add styles applied to elements without styles. This file takes care of the
+parts that _reset.scss just can't, because it's not its purpose.
+
+You can add here styles for textarea, input, headings, labels, among others.
 
 */
 
