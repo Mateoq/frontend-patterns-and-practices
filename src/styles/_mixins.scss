@@ -1,0 +1,36 @@
+/**
+
+_mixins.scss
+
+Add here the sass mixins you need. Try to add a good documentation in them with
+examples so people knows how to work with it.
+
+*/
+
+/**
+ * Mixin used to add breakpoints following mobile-first approach.
+ * Taken from https://www.sitepoint.com/using-sass-maps/
+ *
+ * Example:
+ *
+ * .foo {
+ *   height: 50px;
+ *
+ *   @include from(md) {
+ *     height: 300px;
+ *   }
+ * }
+ *
+ */
+@mixin from($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media only screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
