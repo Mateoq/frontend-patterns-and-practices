@@ -43,7 +43,9 @@ $colors: (
   silver: #BDBDBD,
   boulder: #757575,
   mine-shaft: #212121,
-  guardsman-red: #D50000
+  tall-poppy: #C62828,
+  apple: #388E3C,
+  bondi-blue: #0097A7
 );
 
 // Usage:
@@ -58,6 +60,6 @@ $colors: (
 // Breakpoints
 $breakpoints: (
   md: 768px,
-  lg: 1280px,
+  lg: 1024px,
   xl: 1400px
 );

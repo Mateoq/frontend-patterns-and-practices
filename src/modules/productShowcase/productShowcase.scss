@@ -33,20 +33,48 @@ the css in this part is a decision more than a "MUST TO FOLLOW" rule.
 
 // Here we're gonna add the real code for this module
 .product-showcase {
-  background: color('guardsman-red');
+  background: color('apple');
   color: color('alabaster');
   padding: 25px 0;
+
+  &--blue {
+    background: color('bondi-blue');
+  }
+
+  &--red {
+    background: color('tall-poppy');
+  }
+
+  @include from(md) {
+    padding: 60px 0;
+  }
+
+  @include from(lg) {
+    padding: 120px 0;
+  }
 }
 
 .product-showcase__title {
   margin-top: 0;
   font-size: 26px; // Why px and not other crazy size unit like rem or em?
+
+  @include from(md) {
+    font-size: 38px;
+  }
+
+  @include from(lg) {
+    font-size: 60px;
+  }
 }
 
 .product-showcase__text {
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 30px;
+
+  @include from(md) {
+    margin-bottom: 40px;
+  }
 }
 
 .product-showcase__button {
