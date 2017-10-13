@@ -14,7 +14,7 @@ For these reasons, I want to be clear with something: Please be respectful with 
 ## Presentation
 
 - Sass - Base structure.
-- Sass - Component structure.
+- Sass - Module/Component structure.
 
 ## Modules and Components
 
