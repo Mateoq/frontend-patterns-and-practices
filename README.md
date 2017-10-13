@@ -5,6 +5,17 @@
 - Css browser trageting.
 - Sass viewport support.
 
+## Before start the presentation
+
+This is just another way to structure an app. The presentation is more a bunch of tips that I've recolected during the projects I worked and that I really enjoy using it. I hope you can learn something new and apply one of these tips in your projects. If you already know it, nice!
+
+For these reasons, I want to be clear with something: Please be respectful with this work. If you are gonna say something, I expect a constructive feedback, `NOT NONSENSE CRITICISM`. Thanks.
+
+## Presentation
+
+- Sass - Base structure.
+- Sass - Component structure.
+
 ## Modules and Components
 
 Similar to other architectures, here we have a folder for modules and another one for components. The idea here is the same: `Modules` represent blocks in the page, like a hero, a footer, among others, while `Components` are reusable parts that are instantiated inside modules.
