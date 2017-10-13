@@ -2,7 +2,13 @@
 
 _reset.scss
 
-TODO: Add purpose of file.
+Reset files are used to standarize all the default browsers behaviors for certain elements or styles.
+When you are starting a new project, make sure you have one of these.
+
+Recommended: Normalize.css
+Why? Because it doesn't kill styles in the browsers. It just removes the differences so our HTML works
+better between browsers. Also, Normalize.css exists a long time ago and have been used in different projects as
+a good base for the css.
 
 */
 
