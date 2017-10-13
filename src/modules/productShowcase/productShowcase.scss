@@ -54,6 +54,12 @@ the css in this part is a decision more than a "MUST TO FOLLOW" rule.
   }
 }
 
+.product-showcase__content {
+  @include from(lg) {
+    max-width: 450px;
+  }
+}
+
 .product-showcase__title {
   margin-top: 0;
   font-size: 26px; // Why px and not other crazy size unit like rem or em?
