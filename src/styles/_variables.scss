@@ -1,0 +1,62 @@
+/*
+
+_variables.scss
+
+Use variables to avoid code duplication and to make the code cleaner.
+Here we have an example of common uses for Sass variables.
+
+Some tips:
+
+- Always add a prefix to the variable to know what it is.
+  You can use a map instead if you want, knowing that they need some special
+  usage to get values.
+
+*/
+
+// Colors
+// For this one, we recomment to use http://chir.ag/projects/name-that-color,
+// because, when we have a lot of colors, add names to them can be very messy
+
+// Bad example... Don't do this... when a new gray color comes you won't know
+// how to name it
+// Also, add a prefix to know that is a color
+$gray-light: #FAFAFA;
+$gray-lighter: #E0E0E0;
+$gray-medium: #BDBDBD;
+$gray-dark: #757575;
+$gray-darker: #212121;
+
+// name-that-color example
+$color-alabaster: #FAFAFA;
+$color-alto: #E0E0E0;
+$color-silver: #BDBDBD;
+$color-boulder: #757575;
+$color-mine-shaft: #212121;
+
+// Usage:
+// background-color: $color-alabaster;
+
+// map example
+$colors: (
+  alabaster: #FAFAFA,
+  alto: #E0E0E0,
+  silver: #BDBDBD,
+  boulder: #757575,
+  mine-shaft: #212121
+);
+
+// Usage:
+// Remember, the key is a string.
+// background-color: map-get($colors, "alabaster");
+
+// The problem with this approach is that if we make a mistake,
+// the compiler won't tell us. This can be solved with a function
+// (see _functions.scss)
+// background-color: color("alabaster"); // Much better!!!
+
+// Breakpoints
+$breakpoints: (
+  md: 768px,
+  lg: 1280px,
+  xl: 1400px
+);
