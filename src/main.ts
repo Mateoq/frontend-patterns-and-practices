@@ -1,3 +1,9 @@
-import './styles/main.scss';
+/**
+ * main.ts
+ *
+ * This is the center of all. This file is the glue of all the files we have and
+ * the entrypoint in our webpack application.
+ */
 
-console.log('Hola mundo genial');
+import './styles/main.scss';
+import './setup';
