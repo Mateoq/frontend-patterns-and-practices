@@ -68,6 +68,10 @@ the css in this part is a decision more than a "MUST TO FOLLOW" rule.
   margin-top: 0;
   font-size: 26px; // Why px and not other crazy size unit like rem or em?
 
+  &--italic {
+    font-style: italic;
+  }
+
   @include from(md) {
     font-size: 38px;
   }
