@@ -33,18 +33,22 @@ the css in this part is a decision more than a "MUST TO FOLLOW" rule.
 
 // Here we're gonna add the real code for this module
 .product-showcase {
-  background: color('apple');
-  color: color('alabaster');
+  background: color(apple);
+  color: color(alabaster);
   padding: 25px 0;
 
   &--blue {
-    background: color('bondi-blue');
+    background: color(bondi-blue);
   }
 
   &--red {
-    background: color('tall-poppy');
+    background: color(tall-poppy);
   }
 
+  // Always use breakpoint mixins at the end of the selector and
+  // ADD THEM PER SELECTOR. Using a breakpoint mixin and putting inside
+  // every selector that changes is harder to maintain, because it can get
+  // messy easily.
   @include from(md) {
     padding: 60px 0;
   }
@@ -84,6 +88,6 @@ the css in this part is a decision more than a "MUST TO FOLLOW" rule.
 }
 
 .product-showcase__button {
-  background-color: #37474F;
+  background-color: color(limed-spruce);
   color: color(alabaster);
 }
