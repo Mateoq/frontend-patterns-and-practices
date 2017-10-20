@@ -24,6 +24,7 @@
  *
  */
 
+import Tabs from '../../components/tabs/tabs';
 import Module from '../Module';
 
 // Here we have the classes that we'll use in our javascript, like
@@ -51,21 +52,22 @@ const selectors = {
 
 export const productShowcaseInstances = Module.generateWeakMap();
 
-interface ProductShowcaseOptions {
-  italic: boolean;
+interface ProductShowcaseDOM {
+  title: Element | null;
+  text: Element | null;
+  button: Element | null;
 }
 
 interface ProductShowcaseState {
   isTitleItalic: boolean;
 }
 
-class ProductShowcase extends Module {
-  private dom: {
-    title: Element | null,
-    text: Element | null,
-    button: Element | null,
-  };
+interface ProductShowcaseOptions {
+  italic: boolean;
+}
 
+class ProductShowcase extends Module {
+  private dom: ProductShowcaseDOM;
   private state: ProductShowcaseState;
   private options: ProductShowcaseOptions;
 

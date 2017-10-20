@@ -1,0 +1,16 @@
+.tabs {
+
+}
+
+.tabs__content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+  height: 0;
+
+  &.is-active {
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+}
