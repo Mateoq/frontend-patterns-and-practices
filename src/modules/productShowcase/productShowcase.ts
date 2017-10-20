@@ -44,15 +44,15 @@ const selectors = {
   title: '.product-showcase__title',
   text: '.product-showcase__text',
 
-  // Recommended: Use a data attribute or class that specifies that it attaches a js functionality
+// Recommended: Use a data attribute or class that specifies that it attaches a js functionality
   // like js-button
   button: '[data-button]',
 };
 
-// const productShowcaseInstances = Module.generateWeakMap
+export const productShowcaseInstances = Module.generateWeakMap();
 
 interface ProductShowcaseOptions {
-
+  italic: boolean;
 }
 
 interface ProductShowcaseState {
@@ -67,9 +67,13 @@ class ProductShowcase extends Module {
   };
 
   private state: ProductShowcaseState;
+  private options: ProductShowcaseOptions;
 
   constructor(domElement: HTMLElement, options?: ProductShowcaseOptions) {
     super();
+
+    // Parse the options set in the DOM element
+    this.options = Module.parseOptions(domElement);
 
     // Look for DOM elements
     this.dom = {
@@ -80,11 +84,14 @@ class ProductShowcase extends Module {
 
     // Add initial state
     this.state = {
-      isTitleItalic: false,
+      isTitleItalic: Boolean(this.options.italic) || false,
     };
 
     // Initialize stuff, like events, JS generated DOM and classes, etc.
     this.initializeEvents();
+    this.updateDOMFirstTime();
+
+    productShowcaseInstances.set(domElement, this);
   }
 
   public toggleItalicOnTitle(toggleVar?: boolean): boolean {
@@ -105,6 +112,10 @@ class ProductShowcase extends Module {
     if (this.dom.button) {
       this.dom.button.addEventListener('click', () => this.toggleItalicOnTitle());
     }
+  }
+
+  private updateDOMFirstTime() {
+    this.toggleItalicOnTitle(this.state.isTitleItalic);
   }
 }
 
