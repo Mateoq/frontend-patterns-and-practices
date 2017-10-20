@@ -49,6 +49,8 @@ const selectors = {
   button: '[data-button]',
 };
 
+// const productShowcaseInstances = Module.generateWeakMap
+
 interface ProductShowcaseOptions {
 
 }
@@ -59,9 +61,9 @@ interface ProductShowcaseState {
 
 class ProductShowcase extends Module {
   private dom: {
-    title: Element,
-    text: Element,
-    button: Element,
+    title: Element | null,
+    text: Element | null,
+    button: Element | null,
   };
 
   private state: ProductShowcaseState;
@@ -86,6 +88,10 @@ class ProductShowcase extends Module {
   }
 
   public toggleItalicOnTitle(toggleVar?: boolean): boolean {
+    if (!this.dom.title) {
+      return false;
+    }
+
     this.state.isTitleItalic = typeof toggleVar === 'boolean' ?
       toggleVar :
       !this.state.isTitleItalic;
@@ -96,7 +102,9 @@ class ProductShowcase extends Module {
   }
 
   private initializeEvents() {
-    this.dom.button.addEventListener('click', () => this.toggleItalicOnTitle());
+    if (this.dom.button) {
+      this.dom.button.addEventListener('click', () => this.toggleItalicOnTitle());
+    }
   }
 }
 

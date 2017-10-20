@@ -29,8 +29,10 @@ function getModulesObject(): Modules {
   // WARNING: Don't use variables here!!! require.context works in a very special way so
   // every param MUST BE a literal. See https://webpack.js.org/guides/dependency-management/#require-context
   // for more information.
+
   const requireContext = (require as any).context('./modules', true, /\.ts$/);
-  return requireContext.keys().reduce((acc, key) => {
+
+  return requireContext.keys().reduce((acc: any, key: string) => {
     return {
       ...acc,
       [getModuleNameFromPath(key)]: requireContext(key),
@@ -46,7 +48,7 @@ function initializeModules() {
   const domModules = Array.from(document.querySelectorAll(MODULE_SELECTOR)) as HTMLElement[];
 
   domModules.forEach(domElement => {
-    const moduleName = domElement.getAttribute(MODULE_NAME_ATTR);
+    const moduleName = domElement.getAttribute(MODULE_NAME_ATTR) || '';
 
     if (modules.hasOwnProperty(moduleName)) {
       modules[moduleName].default(domElement);
