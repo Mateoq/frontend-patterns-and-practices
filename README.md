@@ -1,10 +1,5 @@
 # Frontend Patterns and Practices
 
-### TODO
-- Javascript object component pattern.
-- Css browser trageting.
-- Sass viewport support.
-
 ## Before start the presentation
 
 This is just another way to structure an app. The presentation is more a bunch of tips that I've recolected during the projects I worked and that I really enjoy using it. I hope you can learn something new and apply one of these tips in your projects. If you already know it, nice!
