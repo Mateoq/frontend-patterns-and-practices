@@ -11,8 +11,8 @@ const MODULE_SELECTOR = `[${MODULE_NAME_ATTR}]`;
 
 interface Modules {
    [key: string]: {
-     default: (elem: HTMLElement) => void
-   }
+     default: (elem: HTMLElement) => void,
+   };
  }
 
 /**
@@ -33,7 +33,7 @@ function getModulesObject(): Modules {
   return requireContext.keys().reduce((acc, key) => {
     return {
       ...acc,
-      [getModuleNameFromPath(key)]: requireContext(key)
+      [getModuleNameFromPath(key)]: requireContext(key),
     };
   }, {});
 }
@@ -45,12 +45,13 @@ function initializeModules() {
   const modules = getModulesObject();
   const domModules = Array.from(document.querySelectorAll(MODULE_SELECTOR)) as HTMLElement[];
 
-  domModules.forEach((domElement) => {
+  domModules.forEach(domElement => {
     const moduleName = domElement.getAttribute(MODULE_NAME_ATTR);
 
     if (modules.hasOwnProperty(moduleName)) {
       modules[moduleName].default(domElement);
     } else {
+      // tslint:disable-next-line
       console.warn(`Module with name ${moduleName} doesn't exist. Check the data-module property of the element: `, domElement);
     }
   });
